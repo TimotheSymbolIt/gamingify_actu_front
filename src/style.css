@@ -34,11 +34,27 @@ img:not(.logo) {
 
 /* carousel */
 
+.carousel {
+  width: 900px;
+  margin-inline: auto;
+  margin-block: 3rem;
+}
+
+@media screen and (max-width: 992px) {
+  .carousel {
+    width: auto;
+    margin-block: auto;
+  }
+  .carousel-item {
+    width: auto;
+    margin-right: -130%;
+  }
+}
 @media screen and (max-width: 992px) {
   .carousel-caption p {
     font-size: 1rem;
   }
-  .carousel-inner .carousel-caption,
+  .carousel-caption,
   img:not(.logo) {
     width: 43.5%;
     height: 100%;
@@ -320,18 +336,11 @@ img.profile-user {
   width: fit-content;
 }
 
-.carousel {
-  width: 900px;
-  margin-inline: auto;
-  border: 1px solid red;
-}
-
 .carousel-caption {
   background: #803f9e;
   color: #fff;
   position: static;
   height: 5rem;
-  border: 1px solid red;
 }
 
 .carousel-text {
@@ -356,12 +365,6 @@ img.profile-user {
 [data-bs-theme="dark"] .carousel .carousel-indicators [data-bs-target],
 [data-bs-theme="dark"].carousel .carousel-indicators [data-bs-target] {
   background-color: #fff;
-}
-
-@media (min-width: 992px) {
-  .carousel {
-    margin-block-start: 1rem;
-  }
 }
 
 .content-home {
@@ -410,9 +413,54 @@ img.profile-user {
 }
 
 .content-description {
-  margin: 1rem auto;
+  margin: 3rem auto;
   margin-left: 2rem;
   font-size: 2rem;
+}
+
+.content-description a {
+  overflow-wrap: anywhere;
+}
+
+@media screen and (max-width: 992px) {
+  .content-description img {
+    width: 100%;
+  }
+  .banner-container img {
+    width: 100%;
+  }
+}
+
+.commentary-title {
+  background: #803f9e;
+  color: #fff;
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 1rem auto;
+  margin-top: 0;
+  width: fit-content;
+}
+
+@media screen and (max-width: 992px) {
+  .commentary-title {
+    font-size: 1rem;
+  }
+}
+
+.commentary {
+  margin: 2rem;
+}
+
+.commentary-user {
+  font-weight: bold;
+}
+
+.commentary-content {
+  padding-left: 0.5rem;
+  padding: 1rem;
+  background: #803f9e;
+  color: #fff;
 }
 
 /* Jodit Editor */

@@ -1,12 +1,12 @@
-import { useLoaderData, useNavigation, useParams } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import axios from "axios";
-import { redirect } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import CommentaryForm from "../components/CommentaryForm";
 import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
-import Commentary from "../components/Commentary";
 import instance from "../api/api_instance";
+import Commentaries from "../components/Commentaries";
+import Title from "../components/Title";
 
 export const loader = async ({ params: { id } }) => {
   try {
@@ -43,6 +43,11 @@ const ContentArticle = () => {
     const commentary_schema = {
       description: commentary,
     };
+
+    if (commentary.trim() === "") {
+      toast.error("Votre commentaire est vide");
+      return;
+    }
     try {
       await instance
         .post(`/commentary/${article.article_id}`, commentary_schema, {
@@ -100,8 +105,10 @@ const ContentArticle = () => {
           className="content-description"
           dangerouslySetInnerHTML={{ __html: content }}
         ></div>
-        <span className="m-1">{name}</span>
-        {commentaries && <Commentary commentary={commentaries} />}
+
+        {commentaries && <Commentaries commentaries={commentaries} />}
+
+        <p className="commentary-title">Ajouter un commentaire</p>
 
         <CommentaryForm
           submitCommentary={submitCommentary}
