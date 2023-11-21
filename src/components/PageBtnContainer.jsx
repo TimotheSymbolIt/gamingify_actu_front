@@ -1,9 +1,12 @@
 import Pagination from "react-bootstrap/Pagination";
 import { useLocation, useNavigate } from "react-router-dom";
 
+// Composant qui récupère le pathname (/news) et le search (nb de pages) pour créer une pagination à partir du nombre de la page
+
 const PageBtnContainer = ({ currentPage, numOfPages }) => {
   const navigate = useNavigate();
   const { search, pathname } = useLocation();
+
   const handleChange = (pageNumber) => {
     const searchParams = new URLSearchParams(search);
     searchParams.set("page", pageNumber);

@@ -24,7 +24,7 @@ const Home = () => {
       <Carousel>
         <Carousel.Item>
           <Link to="/articles/content/25">
-            <img
+            <img className="img-center"
               width={900}
               height={500}
               alt=""
@@ -33,13 +33,13 @@ const Home = () => {
           </Link>
           <Carousel.Caption className="carousel-caption">
             <p className="carousel-text text-light">
-              Super Mario Bros Wonder sort le 20 octobre 2023
+              Super Mario Bros Wonder est maintenant disponible
             </p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <Link to="/articles/content/24">
-            <img
+            <img className="img-center"
               width={900}
               height={500}
               alt=""
@@ -48,13 +48,13 @@ const Home = () => {
           </Link>
           <Carousel.Caption className="carousel-caption">
             <p className="carousel-text text-light">
-              Sonic Superstars sort le 17 octobre 2023
+              Sonic Superstars est maintenant disponible
             </p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <Link to="/articles/content/40">
-            <img
+            <img className="img-center"
               width={900}
               height={500}
               alt=""
@@ -67,24 +67,10 @@ const Home = () => {
             </p>
           </Carousel.Caption>
         </Carousel.Item>
-        <Carousel.Item>
-          <Link to="/articles/content/34">
-            <img
-              width={900}
-              height={500}
-              alt=""
-              src="../public/img_slider/b4.jpg"
-            />
-          </Link>
-          <Carousel.Caption className="carousel-caption">
-            <p className="carousel-text text-light">
-              Final Fantasy VII Rebirth sort le 27 février 2023
-            </p>
-          </Carousel.Caption>
-        </Carousel.Item>
+        
         <Carousel.Item>
           <Link to="/articles/content/28">
-            <img
+            <img className="img-center"
               width={900}
               height={500}
               alt=""
@@ -99,7 +85,7 @@ const Home = () => {
         </Carousel.Item>
         <Carousel.Item>
           <Link to="/articles/content/35">
-            <img
+            <img className="img-center"
               width={900}
               height={500}
               alt=""
@@ -108,7 +94,7 @@ const Home = () => {
           </Link>
           <Carousel.Caption className="carousel-caption">
             <p className="carousel-text text-light">
-              Marvel Spider-Man 2 sortira le 20 octobre 2023
+              Marvel Spider-Man 2 est maintenant disponible
             </p>
           </Carousel.Caption>
         </Carousel.Item>

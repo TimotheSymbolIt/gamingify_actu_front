@@ -55,7 +55,7 @@ img:not(.logo) {
     font-size: 1rem;
   }
   .carousel-caption,
-  img:not(.logo) {
+  img:not(.logo,  .card-img-top) {
     width: 43.5%;
     height: 100%;
     overflow: hidden;

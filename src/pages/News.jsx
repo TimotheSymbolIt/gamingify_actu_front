@@ -1,4 +1,4 @@
-import { Link, NavLink, redirect } from "react-router-dom";
+import { redirect } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useLoaderData } from "react-router-dom";
@@ -8,20 +8,15 @@ import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/esm/Row";
 import PageBtnContainer from "../components/PageBtnContainer";
 
+// Le loader va analyser l'url, me renvoyer le nombre de la page grâce à l'url et envoyer en tant que params à la requête de l'API.
+
 export const loader = async ({ request }) => {
   const params = Object.fromEntries([
     ...new URL(request.url).searchParams.entries(),
   ]);
-  const token = localStorage.getItem("token");
 
   try {
-    const { data } = await axios(
-      "/api/v1/articles",
-      { params },
-      {
-        headers: { Authorization: `Bearer ${token}` },
-      }
-    );
+    const { data } = await axios("/api/v1/articles", { params });
     return { data };
   } catch (error) {
     toast.error(error?.response?.data?.msg);
@@ -31,7 +26,7 @@ export const loader = async ({ request }) => {
 
 const News = () => {
   const { data } = useLoaderData();
-  const articles = data.AllArticles;
+  const articles = data.allArticles;
   const numOfPages = data.numOfPages;
   const currentPage = data.currentPage;
 

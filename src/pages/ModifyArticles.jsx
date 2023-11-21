@@ -30,7 +30,7 @@ export const loader = async ({ request }) => {
 
 const ModifyArticles = () => {
   const { data } = useLoaderData();
-  const articles = data.AllArticles;
+  const articles = data.allArticles;
   const numOfPages = data.numOfPages;
   const currentPage = data.currentPage;
 

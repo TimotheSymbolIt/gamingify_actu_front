@@ -1,6 +1,3 @@
-import Title from "./Title";
-// import Date from "../../utils/Date";
-
 const SingleCommentary = ({ commentary, user, date }) => {
   const dateN = new Date(date);
   const formattedDate = dateN.toLocaleDateString("fr-FR");

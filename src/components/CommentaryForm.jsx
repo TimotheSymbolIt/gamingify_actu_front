@@ -1,8 +1,8 @@
 import FloatingLabel from "react-bootstrap/esm/FloatingLabel";
 import Form from "react-bootstrap/Form";
-import { useRef, useState } from "react";
+import { useState } from "react";
 
-const CommentaryForm = ({ submitCommentary, commentary, setCommentary }) => {
+const CommentaryForm = ({ submitCommentary }) => {
   const [resetValue, setResetValue] = useState("");
 
   const handleClick = () => {

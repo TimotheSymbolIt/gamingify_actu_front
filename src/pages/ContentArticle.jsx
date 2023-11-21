@@ -6,7 +6,6 @@ import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
 import instance from "../api/api_instance";
 import Commentaries from "../components/Commentaries";
-import Title from "../components/Title";
 
 export const loader = async ({ params: { id } }) => {
   try {
@@ -28,12 +27,11 @@ export const loader = async ({ params: { id } }) => {
 const token = localStorage.getItem("token");
 
 const ContentArticle = () => {
-  const { user, article } = useLoaderData();
+  const { article } = useLoaderData();
   const [commentary, setCommentary] = useState({});
   const [commentaries, setCommentaries] = useState([]);
 
   const { title, img, date_of_creation, content } = article;
-  const { name } = user;
 
   const date = new Date(date_of_creation);
   const formattedDate = date.toLocaleDateString("fr-FR");
@@ -95,7 +93,7 @@ const ContentArticle = () => {
 
           <h1 className="content-title">{title}</h1>
           <div className="user-info">
-            <p className="content-author">De {name}</p>
+            <p className="content-author">De Ryogi</p>
             <p className="content-date">
               Posté le {formattedDate} a {formattedTime}
             </p>
